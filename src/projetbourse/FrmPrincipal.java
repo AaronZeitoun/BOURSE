@@ -173,13 +173,58 @@ public class FrmPrincipal extends javax.swing.JFrame {
         dtmActions = (DefaultTableModel)tblActions.getModel();
         mesTraders = new ArrayList<>();
         
+                  Trader trad1 = new Trader(1, "Enzo");
+        Trader trad2 = new Trader(2, "Noa");
+        Trader trad3 = new Trader(3, "Lilou");
+        Trader trad4 = new Trader(4, "Milo");
+        
+        Action act1 = new Action (1 , "Twitter", 169.15, 159, 110);
+        Action act2 = new Action (2, "Apple", 171.89, 173, 54);
+        Action act3 = new Action (3, "Facebook", 105.67, 98.45, 145);
+        Action act4 = new Action (4, "Microsoft", 110, 113.08, 32);
+        Action act5 = new Action (5, "Dell", 56.12, 54, 78);
+        Action act6 = new Action (6, "VMWare", 121.56, 123.91, 43);
+        Action act7 = new Action (7, "IBM", 42.61, 40.98, 126);
+        
+        mesTraders.add(trad1);
+        mesTraders.add(trad2);
+        mesTraders.add(trad3);
+        mesTraders.add(trad4);
+        
+        
+        trad1.getLesActions().add(act1); trad1.getLesActions().add(act2); trad1.getLesActions().add(act7);
+        trad2.getLesActions().add(act1); trad2.getLesActions().add(act3); trad2.getLesActions().add(act4); trad2.getLesActions().add(act5);
+        trad3.getLesActions().add(act6); trad3.getLesActions().add(act7);
+        trad4.getLesActions().add(act4); trad4.getLesActions().add(act5); trad4.getLesActions().add(act1);
+        
+        
+        
+        for (Trader trad : mesTraders)
+        {
+            v = new Vector();
+            v.add(trad.getIdTrader());
+            v.add(trad.getNomTrader());
+            dtmTraders.addRow(v);
+        }
+                
+       
+         
+         
+        
         // A vous de jouer
         
         
     }//GEN-LAST:event_formWindowOpened
 
     private void tblTradersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTradersMouseClicked
+     
         
+        
+         
+                
+      
+                
+                
         // A vous de jouer
         
     }//GEN-LAST:event_tblTradersMouseClicked
