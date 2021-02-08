@@ -215,7 +215,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
             v.add(trad.getIdTrader());
             v.add(trad.getNomTrader());
             dtmTraders.addRow(v);
+            
+            
+        
+            
+            
+        
         }
+        
                 
        
          
@@ -230,11 +237,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
      
         
         
-         
-                
-      
-                
-                
         // A vous de jouer
         
     }//GEN-LAST:event_tblTradersMouseClicked
