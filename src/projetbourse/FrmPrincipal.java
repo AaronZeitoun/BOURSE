@@ -173,10 +173,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         dtmActions = (DefaultTableModel)tblActions.getModel();
         mesTraders = new ArrayList<>();
         
+        
+        
                   Trader trad1 = new Trader(1, "Enzo");
         Trader trad2 = new Trader(2, "Noa");
         Trader trad3 = new Trader(3, "Lilou");
         Trader trad4 = new Trader(4, "Milo");
+        
+        
         
         Action act1 = new Action (1 , "Twitter", 169.15, 159, 110);
         Action act2 = new Action (2, "Apple", 171.89, 173, 54);
@@ -186,16 +190,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         Action act6 = new Action (6, "VMWare", 121.56, 123.91, 43);
         Action act7 = new Action (7, "IBM", 42.61, 40.98, 126);
         
+        
+        
         mesTraders.add(trad1);
         mesTraders.add(trad2);
         mesTraders.add(trad3);
         mesTraders.add(trad4);
         
         
+        
+        
         trad1.getLesActions().add(act1); trad1.getLesActions().add(act2); trad1.getLesActions().add(act7);
         trad2.getLesActions().add(act1); trad2.getLesActions().add(act3); trad2.getLesActions().add(act4); trad2.getLesActions().add(act5);
         trad3.getLesActions().add(act6); trad3.getLesActions().add(act7);
         trad4.getLesActions().add(act4); trad4.getLesActions().add(act5); trad4.getLesActions().add(act1);
+        
+        
         
         
         
