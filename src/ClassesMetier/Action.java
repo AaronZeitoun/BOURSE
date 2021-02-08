@@ -15,8 +15,8 @@ public class Action
    private int idAction;
     private String nomAction;
     private double valeurActuelle;
-    private double prixDachat;
-    private int quantiteAchetée;
+    private double prixAchat;
+    private int QtéAchetée;
     
     //constructeur 
     public Action (int unId, String unNom, double uneValeur, double unPrix, int uneQuantite)
@@ -24,8 +24,8 @@ public class Action
         idAction = unId;
         nomAction = unNom;
         valeurActuelle = uneValeur;
-        prixDachat = unPrix;
-        quantiteAchetée = uneQuantite;
+        prixAchat = unPrix;
+        QtéAchetée = uneQuantite;
     }
     public int getIdAction()
     {
@@ -45,18 +45,30 @@ public class Action
     }
     public double getPrixDachat()
     {
-        return prixDachat;
+        return prixAchat;
     }
     public void setPrixDachat(int prix)
     {
-        prixDachat = prix;
+        prixAchat = prix;
     }
     public int getQuantiteAchetée()
     {
-        return quantiteAchetée;
+        return QtéAchetée;
     }
     public void setQuantiteAchetée(int quantite)
     {
-        quantiteAchetée = quantite;
+        QtéAchetée = quantite;
+    }
+
+    public double getQuantiteAchete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getPrixAchat() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getQtéAchetée() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

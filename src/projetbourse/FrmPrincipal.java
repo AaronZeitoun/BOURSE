@@ -24,6 +24,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     ArrayList<Trader> mesTraders;
     int numTrader;
     int numAction;
+    private Object trad;
+    private Object Entier;
+    private Vector nouveau;
     public FrmPrincipal() {
         initComponents();
     }
@@ -175,7 +178,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         
         
         
-                  Trader trad1 = new Trader(1, "Enzo");
+        Trader trad1 = new Trader(1, "Enzo");
         Trader trad2 = new Trader(2, "Noa");
         Trader trad3 = new Trader(3, "Lilou");
         Trader trad4 = new Trader(4, "Milo");
@@ -235,9 +238,41 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void tblTradersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTradersMouseClicked
      
+                
+     
+        numTrader = Integer.parseInt(tblTraders.getValueAt(tblTraders.getSelectedRow(),0).toString());
+        // effacer le contenu du jtable 
+        dtmActions.getDataVector().removeAllElements();
         
         
-        // A vous de jouer
+        for (Trader trad : mesTraders)
+            if(trad.getIdTrader() == numTrader)
+            {
+                
+                for ( Action act : trad.getLesActions())
+                    
+                {
+                    v = new Vector();
+                    v.add(act.getIdAction());
+                    v.add(act.getNomAction());
+                    v.add(act.valeurActuelle());
+                    v.add(act.getPrixAchat());
+                    v.add(act.getQtéAchetée());
+                    dtmActions.addRow(v);
+                }
+            }
+//      
+        double montantPorteFeuille = 0;
+        
+        for (Trader trad : mesTraders )
+            if(trad.getIdTrader() == numTrader)
+        {
+            for (Action act : trad.getLesActions())
+            {
+                montantPorteFeuille = ((act.getQuantiteAchete() * act.valeurActuelle()) -(act.getPrixDachat() * act.getQuantiteAchete()) + montantPorteFeuille);
+            }
+        }
+        lblPortefeuille.setText(String.valueOf(montantPorteFeuille));
         
     }//GEN-LAST:event_tblTradersMouseClicked
 
@@ -250,6 +285,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnVendreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendreMouseClicked
         
         // A vous de jouer
+        
+       
+        JOptionPane.showMessageDialog(this, "Sélectionner une action");
+        JOptionPane.showMessageDialog(this, "Veuillez saisir une quantité");
+        JOptionPane.showMessageDialog(this, " Vous ne pouvez pas vendre plus que ce que vous possédez");
         
     }//GEN-LAST:event_btnVendreMouseClicked
 
@@ -302,4 +342,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tblTraders;
     private javax.swing.JTextField txtQuantiteVendue;
     // End of variables declaration//GEN-END:variables
+
+    private void vecteur() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
